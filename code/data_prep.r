@@ -129,6 +129,7 @@ data <- data[,-2]
 #excluding cities without schooling data
 data_with_schooling <- filter(data_with_schooling,!Name %in% unique(data_with_schooling[is.na(data_with_schooling$schooling),]$Name))
 
+
 #adding identifier for model
 data_with_schooling$Code <- group_indices(data_with_schooling, Name)
 data_with_schooling <- data_with_schooling[,-2]
